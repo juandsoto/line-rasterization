@@ -1,7 +1,13 @@
+import { Map2D, Sidebar } from "components";
+
 function App() {
   return (
     <div className="app">
-      <h1>Line rasterization</h1>
+      <Sidebar />
+      <div className="app__right">
+        <h1>Line Rasterization</h1>
+        <Map2D />
+      </div>
     </div>
   );
 }
