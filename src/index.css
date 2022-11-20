@@ -13,19 +13,29 @@ html {
 }
 
 .app {
-  display: flex;
+  height: 100vh;
 }
 
 .app__right {
   display: flex;
+  height: 100%;
   flex: 1;
   flex-direction: column;
   padding: 0.5rem;
   gap: 1rem;
+  margin-left: 16rem;
 }
 
-.app__right > h1 {
+.header > h1 {
   text-align: center;
+}
+
+.btn__container {
+  width: 100%;
+  display: flex;
+  gap: 0.5rem;
+  justify-content: center;
+  align-items: center;
 }
 
 .coordinate {
@@ -40,21 +50,43 @@ html {
   background-color: white;
   border: 1px solid #eee;
   font-size: 0.8rem;
-  top: 0%;
-  left: 50%;
+  top: 50%;
+  left: 0%;
   transform: translate(-50%, -50%);
+  z-index: 99;
 }
 .coordinate:hover > .coordinate__tag {
   visibility: visible;
 }
 
 .configuration {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.configuration__axis,
+.configuration__algorithms {
+  margin-top: 0.5rem;
   display: flex;
   flex-direction: column;
   gap: 1rem;
 }
 
+.header {
+  position: relative;
+}
+
+.header > .selected__points {
+  position: absolute;
+  top: 50%;
+  right: 0;
+  transform: translate(0, -50%);
+}
+
 .sidebar {
+  position: fixed;
   display: flex;
   flex-direction: column;
   gap: 2rem;
@@ -65,10 +97,10 @@ html {
   height: 100vh;
   text-align: center;
   padding: 0.5rem;
+  z-index: 50;
 }
 
 .map__2d {
   flex: 1;
   display: grid;
-  padding: 0.5rem;
 }
